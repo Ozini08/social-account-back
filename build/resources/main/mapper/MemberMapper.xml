@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.social_account_back.domain.dao.mapper.MemberMapper">
+
+    <select id="findByKakaoId" resultType="com.social_account_back.domain.entity.Member">
+        SELECT member_no, kakao_id, nickname, profile_image_url, user_group
+        FROM member
+        WHERE kakao_id = #{kakaoId}
+    </select>
+
+    <insert id="insertMember" parameterType="com.social_account_back.domain.dto.MemberAddDto">
+        INSERT INTO member (
+        kakao_id, nickname, profile_image_url, birth_date, gender_code,
+        user_group, team_ministry1, team_ministry2, team_ministry3
+        )
+        VALUES (
+        #{kakaoId}, #{nickname}, #{profileImageUrl}, #{birthDate}, #{genderCode},
+        #{group}, #{teamMinistry1}, #{teamMinistry2}, #{teamMinistry3}
+        )
+    </insert>
+
+</mapper>
