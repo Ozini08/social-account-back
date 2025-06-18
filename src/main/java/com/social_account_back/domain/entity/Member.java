@@ -3,6 +3,7 @@ package com.social_account_back.domain.entity;
 import lombok.*;
 
 @Getter
+@ToString
 @RequiredArgsConstructor
 public class Member {
     private Integer memberNo;
@@ -10,4 +11,5 @@ public class Member {
     private String nickname;
     private String profileImageUrl;
     private String userGroup;
+    private String auth;
 }

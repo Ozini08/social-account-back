@@ -6,7 +6,7 @@
 <mapper namespace="com.social_account_back.domain.dao.mapper.MemberMapper">
 
     <select id="findByKakaoId" resultType="com.social_account_back.domain.entity.Member">
-        SELECT member_no, kakao_id, nickname, profile_image_url, user_group
+        SELECT member_no, kakao_id, nickname, profile_image_url, user_group, auth
         FROM member
         WHERE kakao_id = #{kakaoId}
     </select>
